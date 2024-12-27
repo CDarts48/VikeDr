@@ -9,7 +9,7 @@ const HeroSection = () => {
           <img src="/workpics/misc/rs=w_1280,h_853.jpg" alt="Description" />
         </div>
         <div className="hero-text">
-          <h1>Quality Service</h1>
+          <h1>Trusted Solutions</h1>
           <p>Professional handyman for residential and commercial properties.</p>
           <button>Contact Me Today!</button>
               </div>

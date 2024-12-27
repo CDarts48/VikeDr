@@ -16,18 +16,7 @@ const Header = () => {
       <nav>
         <ul className="nav">
           <li><Link href="/">Welcome</Link></li>
-          <li>
-            <Link href="/services" onClick={toggleSubmenu}>Services</Link>
-            {isSubmenuVisible && (
-              <ul className="sub-menu">
-                <li><Link href="/services/landscape-irrigation">Landscape & Irrigation</Link></li>
-                <li><Link href="/services/concrete-asphalt">Concrete & Asphalt</Link></li>
-                <li><Link href="/services/snow-ice">Snow & Ice Management</Link></li>
-                <li><Link href="/services/construction">Construction Services</Link></li>
-              </ul>
-            )}
-          </li>
-          <li><Link href="/about-us">About</Link></li>
+          <li><Link href="/about-us">Services</Link></li>
           <li><Link href="/reviews">Reviews</Link></li>
           <li><Link href="/contact-us">Contact</Link></li>
         </ul>
