@@ -8,6 +8,8 @@ import './css/index.css'
 import Footer from '../pages/footer/+Page'
 import HeroSection from '../pages/hero/+Page'
 import ServiceSection from '../pages/service/+Page'
+import Reviews from '../pages/reviews/+Page'
+import ContactSection from '../pages/contact/+Page'
 // import './Layout.css'
 
 Layout.propTypes = {
@@ -22,6 +24,8 @@ function Layout({ pageContext, children }) {
         <Header /> {/* Include the Header component */}
         <HeroSection /> {/* Include the HeroSection component */}
         <ServiceSection /> {/* Include the ServiceSection component */}
+        <Reviews /> {/* Include the Reviews component */} 
+        <ContactSection /> {/* Include the ContactSection component */}
         <Footer /> {/* Include the Footer component */}
 
       </PageContextProvider>
