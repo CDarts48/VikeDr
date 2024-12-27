@@ -7,6 +7,7 @@ import Header from '../pages/header/+Page' // Import the Header component
 import './css/index.css'
 import Footer from '../pages/footer/+Page'
 import HeroSection from '../pages/hero/+Page'
+import ServiceSection from '../pages/service/+Page'
 // import './Layout.css'
 
 Layout.propTypes = {
@@ -19,8 +20,8 @@ function Layout({ pageContext, children }) {
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
         <Header /> {/* Include the Header component */}
-        {children}
         <HeroSection /> {/* Include the HeroSection component */}
+        <ServiceSection /> {/* Include the ServiceSection component */}
         <Footer /> {/* Include the Footer component */}
 
       </PageContextProvider>
