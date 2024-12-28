@@ -3,12 +3,12 @@ footer {
     background-color: #1a1a1a;
     color: white;
     text-align: center;
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
-  }
-  
-  footer p {
+}
+
+footer p {
     margin: 0;
-  }
+}

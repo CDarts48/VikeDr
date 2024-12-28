@@ -27,7 +27,6 @@ function Layout({ pageContext, children }) {
         <Reviews /> {/* Include the Reviews component */} 
         <ContactSection /> {/* Include the ContactSection component */}
         <Footer /> {/* Include the Footer component */}
-
       </PageContextProvider>
     </React.StrictMode>
   )
