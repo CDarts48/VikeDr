@@ -3,7 +3,7 @@ import './code.css';
 
 const ServiceSection = () => {
   return (
-    <section className="service">
+    <section id="services-section" className="service">
       <h2>Service in Action</h2>
       <div className="grid">
   <div className="image-container">
