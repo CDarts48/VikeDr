@@ -76,14 +76,14 @@ body {
 @media (min-width: 769px) {
     .hero {
         flex-direction: row; /* Align items horizontally on larger screens */
-        height: 70vh; /* Adjust height for larger screens */
+        height: 66vh; /* Adjust height for larger screens */
     }
 
     .hero-content {
         flex-direction: row; /* Align items horizontally on larger screens */
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
+        /* justify-content: space-between;
+        align-items: left;
+        width: 100%; */
     }
 
     .hero-text {
@@ -111,6 +111,7 @@ body {
     }
 
     .hero-text p {
+        
         font-size: 2em; /* Adjust font size for larger screens */
     }
 

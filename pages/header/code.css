@@ -13,7 +13,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 1.5em; /* Adjusted font size for mobile */
+  font-size: 2.5em; /* Adjusted font size for mobile */
   font-weight: bold;
   color: rgb(80, 125, 229);
 }
@@ -22,43 +22,36 @@ header h1 {
   list-style-type: none;
   padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row; /* Align items horizontally */
+  justify-content: center;
   width: 100%;
   margin: 10px 0 0 0;
 }
 
 .nav > li {
-  margin: 10px 0;
+  margin: 0 10px; /* Adjust margin for spacing */
 }
 
-.nav .sub-menu {
-  display: none;
-  position: absolute;
-  list-style-type: none;
-  padding: 0;
-  left: 0;
-}
 
 /* Media queries for larger screens */
 @media (min-width: 769px) {
   header {
-    flex-direction: row;
-    justify-content: left;
+    flex-direction: column; /* Keep the header layout as column */
+    align-items: center; /* Center align items */
   }
 
   header h1 {
-    font-size: xx-large; /* Adjusted font size for larger screens */
+    font-size: 3em; /* Adjusted font size for larger screens */
   }
 
   .nav {
-    flex-direction: row;
-    justify-content: left;
-    width: auto;
-    margin-left: 20%;
+    flex-direction: row; /* Align items horizontally */
+    justify-content: center; /* Center align items */
+    width: 100%;
+    margin: 10px 0 0 0; /* Keep the same margin */
   }
 
   .nav > li {
-    margin: 0 50px;
+    margin: 0 50px; /* Adjust margin for spacing */
   }
 }
