@@ -18,11 +18,15 @@ const Header = () => {
           <li><Link href="/">Welcome</Link></li>
           <li><Link href="/about-us">Services</Link></li>
           <li><Link href="/reviews">Reviews</Link></li>
-          <li><Link href="/contact-us">Contact</Link></li>
+          <li>
+            <a href="mailto:Chris@Tophersmandr.com?subject=A Maintenance and Repair Request from">
+              Contact
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
   );
-};
+}
 
 export default Header;

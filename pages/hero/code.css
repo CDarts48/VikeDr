@@ -56,6 +56,7 @@ body {
     color: rgb(80, 125, 229);
     font-size: 2em; /* Adjust font size for small screens */
     font-family: 'Contrail One', serif, system-ui;
+    margin-bottom: 0; /* Remove bottom margin */
 }
 
 .hero-text p {
@@ -66,10 +67,41 @@ body {
 }
 
 .hero-text button {
-    font-size: 1em; /* Adjust font size for small screens */
-    border-radius: 25px;
-    padding: 10px 20px;
+    background: blue;
+    color: white;
+    border: none;
+    padding: 20px;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.6rem;
+    cursor: pointer;
+    outline: inherit;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px #000;
+    transition: all 0.3s ease;
     margin-top: 10px; /* Add margin to separate button from text */
+}
+
+.hero-text button:hover {
+    filter: brightness(120%);
+    box-shadow: 10px 10px 10px #000;
+}
+
+.hero-text button:active {
+    box-shadow: inset 2px 2px 10px #000;
+}
+
+.hero-text button::after {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 0;
+    background-color: #fff;
+    transition: 0.1s width linear;
+    margin: 0 auto;
+}
+
+.hero-text button:hover::after {
+    width: 100%;
 }
 
 /* Media queries for larger screens */
@@ -108,14 +140,14 @@ body {
 
     .hero-text h1 {
         font-size: 3.5em; /* Adjust font size for larger screens */
+        margin-bottom: 0; /* Remove bottom margin */
     }
 
     .hero-text p {
-        
         font-size: 2em; /* Adjust font size for larger screens */
     }
 
     .hero-text button {
-        font-size: 2em; /* Adjust font size for larger screens */
+        font-size: 1.6rem; /* Keep font size the same */
     }
 }
