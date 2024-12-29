@@ -38,119 +38,16 @@ body {
     justify-content: center;
     width: 100%;
     height: auto; /* Adjust height for small screens */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
 }
 
 .hero-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    max-height: 100%; /* Ensure the image does not extend past the hero div */
-    max-width: 100%; /* Ensure the image does not extend past the hero div */
-}
-
-.hero-text h1 {
-    color: rgb(80, 125, 229);
-    font-size: 2em; /* Adjust font size for small screens */
-    font-family: 'Contrail One', serif, system-ui;
-}
-
-.hero-text p {
-    color: rgb(169, 169, 169);
-    font-size: 1.2em; /* Adjust font size for small screens */
-    width: 80%;
-    margin: 10px 0; /* Adjust margin for small screens */
-}
-
-.hero-text button {
-    font-size: 1em; /* Adjust font size for small screens */
-    border-radius: 25px;
-    padding: 10px 20px;
-    margin-top: 10px; /* Add margin to separate button from text */
-}
-
-/* Media queries for larger screens */
-@media (min-width: 769px) {
-    .hero {
-        flex-direction: row; /* Align items horizontally on larger screens */
-        height: 70vh; /* Adjust height for larger screens */
-    }
-
-    .hero-content {
-        flex-direction: row; /* Align items horizontally on larger screens */
-    }
-
-    .hero-text {
-        width: 50%; /* Adjust width for larger screens */
-        margin-bottom: 0; /* Remove bottom margin for larger screens */
-    }
-
-    .hero-image {
-        width: 50%; /* Adjust width for larger screens */
-        height: 50%; /* Adjust height for larger screens */
-    }
-
-    .hero-image img {
-        max-height: 0%; /* Ensure the image does not extend past the hero div */
-        max-width: 50%; /* Ensure the image does not extend past the hero div */
-    }
-
-    .hero-text h1 {
-        font-size: 3em; /* Adjust font size for larger screens */
-    }
-
-    .hero-text p {
-        font-size: 2em; /* Adjust font size for larger screens */
-    }
-
-    .hero-text button {
-        font-size: 1.5em; /* Adjust font size for larger screens */
-    }
-}body {
-    margin: 0;
-    padding: 0;
-}
-
-.hero {
-    display: flex;
-    flex-direction: column; /* Stack items vertically on small screens */
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    height: auto; /* Adjust height for small screens */
-    padding: 20px; /* Add padding for small screens */
-    box-sizing: border-box;
-}
-
-.hero-content {
-    display: flex;
-    flex-direction: column; /* Stack items vertically on small screens */
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 20px; /* Add margin to separate hero-text from hero-image */
-}
-
-.hero-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: auto; /* Adjust height for small screens */
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
     max-height: 100%; /* Ensure the image does not extend past the hero div */
     max-width: 100%; /* Ensure the image does not extend past the hero div */
 }
@@ -196,17 +93,21 @@ body {
 
     .hero-image {
         width: 50%; /* Adjust width for larger screens */
-        height: 100%; /* Adjust height for larger screens */
+        height: 100%; /* Ensure the image fills the height of the container */
+        margin: 0; /* Remove any margin */
+        padding: 0; /* Remove any padding */
     }
 
     .hero-image img {
         width: 100%;
         height: 100%;
         object-fit: cover; /* Ensure the image covers its container */
+        margin: 0; /* Remove any margin */
+        padding: 0; /* Remove any padding */
     }
 
     .hero-text h1 {
-        font-size: 3em; /* Adjust font size for larger screens */
+        font-size: 3.5em; /* Adjust font size for larger screens */
     }
 
     .hero-text p {
@@ -214,6 +115,6 @@ body {
     }
 
     .hero-text button {
-        font-size: 1.5em; /* Adjust font size for larger screens */
+        font-size: 2em; /* Adjust font size for larger screens */
     }
 }
