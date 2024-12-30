@@ -10,7 +10,7 @@ const Header = () => {
         <ul className="nav">
           <li><Link href="/">Welcome</Link></li>
           <li><a href="#services-section">Services</a></li>
-          {/* <li><a href="#reviews-section">Reviews</a></li> */}
+          <li><a href="#reviews-section">Reviews</a></li>
           <li><a href="mailto:Chris@tophersmandr.com?subject=A Maintenance and Repair Request from">Contact</a></li>
         </ul>
       </nav>
