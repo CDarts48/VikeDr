@@ -5,23 +5,23 @@ const Reviews = () => {
     const reviews = [
         {
             title: 'Efficient/Professional',
-            content: '"Christopher was efficient, and extremely professional. It was as if he solved the issue before arriving and came with the piece to fix the problem with a receipt for me from Home Depot and all! Really appreciate when he had to come in and out of the house with the snow he took his shoes off and banged the snow off when setting them inside. 10/10 will hire again. We truly appreciate you being here so quickly within an hour of booking your services and solving all of our electrical issues! Thank you :)"',
-            author: 'Cassandra K. - 11/15/2022'
+            content: '"Christopher was super professional. He showed up on time and completed all the jobs efficiently. I’d hire him again!"',
+            author: 'Mary Beth D. - 9/18/2024'
         },
         {
             title: 'Expert Support',
-            content: '"Chris was great. He knew exactly how to handle installing my lights and they look great. I’d definitely hire him again!"',
-            author: 'Ryan C. - 4/13/2023'
+            content: '"Christopher was great. Helped me solve the issue quickly and made everything work again. Highly recommended."',
+            author: 'Ryan C. - 9/14/2024'
         },
         {
             title: 'Excellent Service',
-            content: '“Christopher communicated clearly, worked diligently, and was very efficient. He did the work I needed replacing a light fixture and then helped with several other small tasks. He had to go to several places to find all the right parts, but remained calm and focused. I really appreciated his kindness and flexibility. I highly recommend him!"',
-            author: 'Elizabeth E. - 5/10/2023'
+            content: '“On time, super helpful, and appreciated that he consulted with me prior to setting the appointment to make sure we were clear on exactly what work I needed and what parts would be required."',
+            author: 'Julia K. - 8/16/2024'
         }
     ];
 
     return (
-        <section id="reviews-section" className="reviews"> 
+        <section className="reviews"> 
             <h1>Satisfied Clients</h1>
             {reviews.map((review, index) => (
                 <div key={index}>
@@ -35,8 +35,6 @@ const Reviews = () => {
                     </div>
                     <p>{review.content}</p>
                     <p>{review.author}</p>
-                    <button>Read full review</button>
-
                 </div>
             ))}
         </section>
