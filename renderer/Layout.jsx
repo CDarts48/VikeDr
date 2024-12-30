@@ -23,8 +23,8 @@ function Layout({ pageContext, children }) {
       <PageContextProvider pageContext={pageContext}>
         <Header /> {/* Include the Header component */}
         <HeroSection /> {/* Include the HeroSection component */}
-        <ServiceSection /> {/* Include the ServiceSection component */}
-        <Reviews /> {/* Include the Reviews component */} 
+        <ServiceSection /> Include the ServiceSection component
+        {/* <Reviews /> {/* Include the Reviews component */}  */}
         <ContactSection /> {/* Include the ContactSection component */}
         <Footer /> {/* Include the Footer component */}
       </PageContextProvider>
