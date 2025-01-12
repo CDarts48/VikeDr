@@ -59,6 +59,10 @@ body {
     margin-bottom: 0; /* Remove bottom margin */
 }
 
+.hero-text h2 {
+    color: white; /* Set the color of h2 text to white */
+}
+
 .hero-text p {
     color: rgb(169, 169, 169);
     font-size: 1.2em; /* Adjust font size for small screens */
@@ -141,6 +145,12 @@ body {
     .hero-text h1 {
         font-size: 3.5em; /* Adjust font size for larger screens */
         margin-bottom: 0; /* Remove bottom margin */
+    }
+
+    .hero-text h2 {
+        font-size: 2em; /* Adjust font size for larger screens */
+        color: white; /* Ensure h2 text is white on larger screens */
+        font-style: oblique;
     }
 
     .hero-text p {

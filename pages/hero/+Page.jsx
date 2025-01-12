@@ -10,6 +10,7 @@ const HeroSection = () => {
         </div>
         <div className="hero-text">
           <h1>Trusted Solutions</h1>
+          <h2>Since 2012</h2>
           <p>Professional handyman for residential and commercial properties.</p>
           <button onClick={() => window.location.href='mailto:Chris@Tophersmandr.com?subject=A Maintenance and Repair Request from'}>Contact Me Today!</button>
         </div>

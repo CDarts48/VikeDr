@@ -5,8 +5,8 @@ const Reviews = () => {
     const reviews = [
         {
             title: 'Efficient/Professional',
-            content: '"Christopher was super professional. He showed up on time and completed all the jobs efficiently. I’d hire him again!"',
-            author: 'Mary Beth D. - 9/18/2024'
+            content: '"Christopher is amazing! Very knowledgeable, professional and on time. Will use him again! :)."',
+            author: 'Tess H. - 5/22/2022'
         },
         {
             title: 'Expert Support',
@@ -15,8 +15,8 @@ const Reviews = () => {
         },
         {
             title: 'Excellent Service',
-            content: '“On time, super helpful, and appreciated that he consulted with me prior to setting the appointment to make sure we were clear on exactly what work I needed and what parts would be required."',
-            author: 'Julia K. - 8/16/2024'
+            content: '“Christopher figured out the issue, figured out a way to fix it, and saved us time and money."',
+            author: 'Zulfi W. - 1/7/2023'
         }
     ];
 
