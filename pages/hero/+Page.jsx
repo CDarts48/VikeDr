@@ -22,10 +22,8 @@ const HeroSection = () => {
   const handleContactClick = () => {
     // Track the button click event
     if (window.gtag) {
-      window.gtag('event', 'click', {
-        event_category: 'Button',
-        event_label: 'Contact Me Today',
-        value: 'Contact'
+      window.gtag('event', 'ads_conversion_Contact_1', {
+        // Add any additional event parameters here
       });
     }
     // Redirect to email
