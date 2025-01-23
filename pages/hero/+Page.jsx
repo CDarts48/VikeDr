@@ -1,12 +1,8 @@
 import React from 'react';
 import './code.css';
-
+import { handleContactClick } from '../header/onClick';
 
 const HeroSection = () => {
-  const handleContactClick = () => {
-    window.location.href = 'mailto:Chris@Tophersmandr.com?subject=A Maintenance and Repair Request from';
-  };
-
   return (
     <section className="hero">
       <div className="hero-content">
@@ -17,7 +13,7 @@ const HeroSection = () => {
           <h1>Trusted Solutions</h1>
           <h2>Since 2012</h2>
           <p>Professional handyman for residential and commercial properties.</p>
-          <button onClick="dataLayer.push ({handleContactClick});">Contact Me Today!</button>
+          <button onClick={handleContactClick}>Contact Me Today!</button>
         </div>
       </div>
     </section>

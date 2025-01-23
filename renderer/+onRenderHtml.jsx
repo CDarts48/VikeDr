@@ -39,6 +39,22 @@ function onRenderHtml(pageContext) {
           gtag('js', new Date());
           gtag('config', 'AW-11312378702');
         </script>
+        <!-- Event snippet for Tophers Clicks conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-11312378702/IOYMCO-K4pEaEM7mlJIq',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
       </head>
       <body>
         <div id="react-root">${dangerouslySkipEscape(pageHtml)}</div>
