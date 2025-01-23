@@ -1,5 +1,6 @@
 import React from 'react';
 import './code.css';
+import { handleContactClick } from '../header/onClick';
 
 const ContactSection = () => {
   return (
@@ -21,7 +22,10 @@ const ContactSection = () => {
         <p>Topher's Maintenance and Repair</p>
         <p>Westminster, Colorado</p>
         <p>
-          <a href="mailto:Chris@tophersmandr.com?subject=A Maintenance and Repair Request from">
+          <a
+            href="mailto:Chris@tophersmandr.com?subject=A Maintenance and Repair Request from"
+            onClick={handleContactClick}
+          >
             Chris@tophersmandr.com
           </a>
         </p>
