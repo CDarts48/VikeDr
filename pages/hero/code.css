@@ -70,7 +70,8 @@ body {
     margin: 10px 0; /* Adjust margin for small screens */
 }
 
-.hero-text button {
+.contact-button {
+    display: inline-block;
     background: blue;
     color: white;
     border: none;
@@ -82,19 +83,21 @@ body {
     border-radius: 15px;
     box-shadow: 5px 5px 5px #000;
     transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
     margin-top: 10px; /* Add margin to separate button from text */
 }
 
-.hero-text button:hover {
+.contact-button:hover {
     filter: brightness(120%);
     box-shadow: 10px 10px 10px #000;
 }
 
-.hero-text button:active {
+.contact-button:active {
     box-shadow: inset 2px 2px 10px #000;
 }
 
-.hero-text button::after {
+.contact-button::after {
     content: "";
     display: block;
     height: 5px;
@@ -104,7 +107,7 @@ body {
     margin: 0 auto;
 }
 
-.hero-text button:hover::after {
+.contact-button:hover::after {
     width: 100%;
 }
 
@@ -157,7 +160,7 @@ body {
         font-size: 2em; /* Adjust font size for larger screens */
     }
 
-    .hero-text button {
+    .contact-button {
         font-size: 1.6rem; /* Keep font size the same */
     }
 }

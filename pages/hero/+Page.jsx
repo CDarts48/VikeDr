@@ -13,7 +13,13 @@ const HeroSection = () => {
           <h1>Trusted Solutions</h1>
           <h2>Since 2012</h2>
           <p>Professional handyman for residential and commercial properties.</p>
-          <button onClick={handleContactClick}>Contact Me Today!</button>
+          <a
+            href="mailto:Chris@tophersmandr.com?subject=A Maintenance and Repair Request from"
+            onClick={handleContactClick}
+            className="contact-button"
+          >
+            Contact Me Today!
+          </a>
         </div>
       </div>
     </section>
