@@ -1,6 +1,8 @@
 import react from '@vitejs/plugin-react'
 import vike from 'vike/plugin'
+import { defineConfig } from 'vite'
 
-export default {
-  plugins: [react(), vike()]
-}
+export default defineConfig({
+  plugins: [react(), vike()],
+  publicDir: 'public'
+})
