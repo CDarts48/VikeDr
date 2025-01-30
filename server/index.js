@@ -2,6 +2,7 @@ import express from 'express'
 import compression from 'compression'
 import { renderPage } from 'vike/server'
 import { root } from './root.js'
+const isProduction = process.env.NODE_ENV === 'prod'
 
 startServer()
 
@@ -10,9 +11,33 @@ async function startServer() {
 
   app.use(compression())
 
-  // Serve static assets
-  const sirv = (await import('sirv')).default
-  app.use(sirv(`${root}/dist/client`, { dev: true }))
+  // Vite integration
+  if (isProduction) {
+    // In production, we need to serve our static assets ourselves.
+    // (In dev, Vite's middleware serves our static assets.)
+    const sirv = (await import('sirv')).default;
+    app.use(sirv(`${root}/dist/client`));
+
+    // Manually import the server production entry
+    try {
+      const { importServerProductionEntry } = await import('@brillout/vite-plugin-server-entry');
+      await importServerProductionEntry();
+    } catch (error) {
+      console.error('Failed to import server production entry:', error);
+    }
+  } else {
+    // We instantiate Vite's development server and integrate its middleware to our server.
+    // ⚠️ We instantiate it only in development. (It isn't needed in production and it
+    // would unnecessarily bloat our production server.)
+    const vite = await import('vite');
+    const viteDevMiddleware = (
+      await vite.createServer({
+        root,
+        server: { middlewareMode: true }
+      })
+    ).middlewares;
+    app.use(viteDevMiddleware);
+  }
 
   // Other middlewares (e.g. some RPC middleware such as Telefunc)
   // ...
