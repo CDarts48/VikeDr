@@ -1,6 +1,6 @@
 {
   "scripts": {
-    // "dev": "cross-env NODE_ENV=development vite",
+    "dev": "cross-env NODE_ENV=development vite",
     "prod": "npm run lint && npm run build && npm run server:prod",
     "build": "vite build",
     "server:dev": "cross-env NODE_ENV=development node ./server",
