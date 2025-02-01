@@ -4,7 +4,7 @@ import './code.css';
 const Footer = () => {
   return (
     <footer>
-      <p>© 2024 Topher's Maintenance and Repair</p>
+      <p>© 2025 Topher's Maintenance and Repair</p>
     </footer>
   );
 }

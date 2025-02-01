@@ -21,6 +21,7 @@ const ContactSection = () => {
         <h2>Looking Forward to Hearing From You!</h2>
         <p>Topher's Maintenance and Repair</p>
         <p>Westminster, Colorado</p>
+        <p>(720) 238-4082</p>
         <p>
           <a
             href="mailto:Chris@tophersmandr.com?subject=A Maintenance and Repair Request from"
