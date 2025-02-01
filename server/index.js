@@ -20,8 +20,7 @@ async function startServer() {
 
     // Manually import the server production entry
     try {
-      const { importServerProductionEntry } = await import('@brillout/vite-plugin-server-entry');
-      await importServerProductionEntry();
+      await import(`${root}/dist/server/server-entry.js`);
     } catch (error) {
       console.error('Failed to import server production entry:', error);
     }
