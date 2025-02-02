@@ -2,6 +2,7 @@ import express from 'express'
 import compression from 'compression'
 import { renderPage } from 'vike/server'
 import { root } from './root.js'
+import path from 'path'
 const isProduction = process.env.NODE_ENV === 'production'
 
 startServer()
@@ -11,10 +12,10 @@ async function startServer() {
 
   app.use(compression())
 
-    // Serve robots.txt as plain text
-    app.use('/robots.txt', (req, res) => {
-      res.sendFile(path.join(root, 'robots.txt'))
-    })
+  // Serve robots.txt as plain text
+  app.get('/robots.txt', (req, res) => {
+    res.sendFile(path.join(root, 'robots.txt'))
+  })
 
   // Vite integration
   if (isProduction) {
@@ -25,11 +26,13 @@ async function startServer() {
 
     // Manually import the server production entry
     try {
-      await import(`${root}/dist/server/server-entry.js`);
+      await import(`${root}/dist/server/+onRenderHtml.js`);
     } catch (error) {
       console.error('Failed to import server production entry:', error);
     }
   } else {
+    // Commenting out the development server functions
+    /*
     // We instantiate Vite's development server and integrate its middleware to our server.
     // ⚠️ We instantiate it only in development. (It isn't needed in production and it
     // would unnecessarily bloat our production server.)
@@ -41,6 +44,7 @@ async function startServer() {
       })
     ).middlewares;
     app.use(viteDevMiddleware);
+    */
   }
 
   // Other middlewares (e.g. some RPC middleware such as Telefunc)
