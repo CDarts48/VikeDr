@@ -11,6 +11,11 @@ async function startServer() {
 
   app.use(compression())
 
+    // Serve robots.txt as plain text
+    app.use('/robots.txt', (req, res) => {
+      res.sendFile(path.join(root, 'robots.txt'))
+    })
+
   // Vite integration
   if (isProduction) {
     // In production, we need to serve our static assets ourselves.
