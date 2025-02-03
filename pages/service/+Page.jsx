@@ -15,7 +15,7 @@ const ServiceSection = () => {
     {/* <button>View More</button> */}
   </div>
         <div>
-        <img src="/workpics/20231113_162909.jpg" alt="Bathroom" />
+        <img src="/workpics/after/20231113_162909.jpg" alt="Bathroom" />
           <div className="Bathroom">
             <h3>Bathroom</h3>
             <p>Our team can help you design and build the perfect bathroom.</p>
