@@ -11,16 +11,15 @@ const ContactSection = () => {
         mapTypeId: "terrain",
       });
       // Define the LatLng coordinates for the polygon's path.
-      const triangleCoords = [
-        { lat: 40.1672, lng: -104.9366 },
-        { lat: 39.7294, lng: -104.8319 },
-        { lat: 39.6478, lng: -104.9878 },
-        { lat: 39.6509, lng: -105.1874 },
-        { lat: 40.1336, lng: -105.2763 },
-      ];
+      const rectangleCoords = [
+        { lat: 40.2249, lng: -105.2717 }, // NW Corner (Lyons, CO)
+        { lat: 40.2249, lng: -104.9300 }, // NE Corner (Frederick/Firestone)
+        { lat: 39.6650, lng: -104.8300 }, // SE Corner (Heather Gardens, Aurora)
+        { lat: 39.6333, lng: -105.3172 }, // SW Corner (Evergreen)
+];
       // Construct the polygon.
       const serviceArea = new google.maps.Polygon({
-        paths: triangleCoords,
+        paths: rectangleCoords,
         strokeColor: "#FF0000",
         strokeOpacity: 0.8,
         strokeWeight: 2,

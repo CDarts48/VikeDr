@@ -1,4 +1,3 @@
-// https://vike.dev/onRenderHtml
 export { onRenderHtml }
 
 import ReactDOMServer from 'react-dom/server'
@@ -6,6 +5,9 @@ import { Layout } from './Layout'
 import { escapeInject, dangerouslySkipEscape } from 'vike/server'
 import logoUrl from './logo.svg'
 import { getPageTitle } from './getPageTitle'
+
+// Load environment variables
+require('dotenv').config();
 
 function onRenderHtml(pageContext) {
   const { Page } = pageContext
@@ -23,6 +25,7 @@ function onRenderHtml(pageContext) {
 
   const title = getPageTitle(pageContext)
   const desc = pageContext.data?.description || pageContext.config.description || "Topher's Maintenance and Repair";
+  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">
       <head>
@@ -32,7 +35,7 @@ function onRenderHtml(pageContext) {
         <meta name="description" content="${desc}" />
         <title>${title}</title>
         <link rel="preload" href="/workpics/misc/rs=w_1280,h_853.webp" as="image">
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZ2DeYroe7GJ-DJb_4QfvxCWeFFFLbnsY&callback=initMap"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap"></script>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11312378702"></script>
         <script>
@@ -43,20 +46,20 @@ function onRenderHtml(pageContext) {
         </script>
         <!-- Event snippet for Tophers Clicks conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-11312378702/IOYMCO-K4pEaEM7mlJIq',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
+        <script>
+          function gtag_report_conversion(url) {
+            var callback = function () {
+              if (typeof(url) != 'undefined') {
+                window.location = url;
+              }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-11312378702/IOYMCO-K4pEaEM7mlJIq',
+                'event_callback': callback
+            });
+            return false;
+          }
+        </script>
       </head>
       <body>
         <div id="react-root">${dangerouslySkipEscape(pageHtml)}</div>
