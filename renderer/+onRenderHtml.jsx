@@ -25,7 +25,7 @@ function onRenderHtml(pageContext) {
 
   const title = getPageTitle(pageContext)
   const desc = pageContext.data?.description || pageContext.config.description || "Topher's Maintenance and Repair";
-  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+  const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY || '';
   const documentHtml = escapeInject`<!DOCTYPE html>
     <html lang="en">
       <head>
