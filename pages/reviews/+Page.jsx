@@ -21,7 +21,7 @@ const Reviews = () => {
     ];
 
     return (
-        <section className="reviews"> 
+        <section id="reviews-section" className="reviews"> 
             <h1>Satisfied Clients</h1>
             {reviews.map((review, index) => (
                 <div key={index}>
