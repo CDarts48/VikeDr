@@ -6,7 +6,7 @@ const ContactSection = () => {
     // Initialize the map
     function initMap() {
       const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 9.75,
+        zoom: 9.5,
         center: { lat: 39.9205, lng: -105.0867 },
         mapTypeId: "terrain",
       });
@@ -16,7 +16,7 @@ const ContactSection = () => {
         { lat: 40.2249, lng: -104.9300 }, // NE Corner (Frederick/Firestone)
         { lat: 39.6650, lng: -104.8300 }, // SE Corner (Heather Gardens, Aurora)
         { lat: 39.6333, lng: -105.3172 }, // SW Corner (Evergreen)
-];
+      ];
       // Construct the polygon.
       const serviceArea = new google.maps.Polygon({
         paths: rectangleCoords,
@@ -42,15 +42,22 @@ const ContactSection = () => {
   return (
     <section id="contact-section" className="contact-section">
       <div className="contact-header">
-        <h2>Contact Me</h2>
+        <div className="header-left">
+          <h2>Service Area</h2>
+        </div>
+        <div className="header-right">
+          <h2>Contact Me</h2>
+        </div>
       </div>
       <div className="contact-content">
-        <div className="contact-map" id="map"></div>
+        <div className="contact-map">
+          <div id="map"></div>
+        </div>
         <div className="contact-info">
-          <h2>Looking Forward to Hearing From You!</h2>
           <p>Topher's Maintenance and Repair</p>
           <p>Westminster, Colorado</p>
           <p>(720) 238-4082</p>
+          <p>Looking Forward to Hearing From You!</p>
           <p>
             <a href="mailto:Chris@tophersmandr.com?subject=A Maintenance and Repair Request from">
               Chris@tophersmandr.com
