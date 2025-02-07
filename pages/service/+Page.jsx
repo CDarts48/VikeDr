@@ -16,7 +16,7 @@ const ServiceSection = () => {
   };
 
   const porchImages = [
-    { src: './workpics/before/hillPorchBefore.png', alt: 'Porch', caption: 'Before' },
+    { src: './workpics/before/porches/hillPorchBefore.png', alt: 'Porch', caption: 'Before' },
     { src: './workpics/after/hillPorchAfter.png', alt: 'Porch', caption: 'After' },
     { src: './workpics/after/porch3.jpg', alt: 'Porch', caption: 'Porch 3' },
   ];
@@ -43,32 +43,36 @@ const ServiceSection = () => {
     <section id="services-section" className="service">
       <h2>Service in Action</h2>
       <div className="grid">
-        <div className="image-container" onClick={() => openCarousel(porchImages)}>
+        <div className="image-container">
           <img src="./workpics/after/hillPorchAfter.png" alt="Porches" />
           <div className="Porches">
             <h3>Porches</h3>
             <p>Our experts can repair and maintain your porch to keep it looking great.</p>
+            <button onClick={() => openCarousel(porchImages)} className="see-more-button">Click to See More</button>
           </div>
         </div>
-        <div className="image-container" onClick={() => openCarousel(bathroomImages)}>
+        <div className="image-container">
           <img src="/workpics/after/20231113_162909.jpg" alt="Bathroom" />
           <div className="Bathroom">
             <h3>Bathroom</h3>
             <p>Our team can help you design and build the perfect bathroom.</p>
+            <button onClick={() => openCarousel(bathroomImages)} className="see-more-button">Click to See More</button>
           </div>
         </div>
-        <div className="image-container" onClick={() => openCarousel(kitchenImages)}>
+        <div className="image-container">
           <img src="./workpics/after/20230920_170812.jpg" alt="Kitchen" />
           <div className="Kitchen">
             <h3>Kitchen</h3>
             <p>We specialize in kitchen renovations to create a space you'll love.</p>
+            <button onClick={() => openCarousel(kitchenImages)} className="see-more-button">Click to See More</button>
           </div>
         </div>
-        <div className="image-container" onClick={() => openCarousel(remodelImages)}>
+        <div className="image-container">
           <img src="./workpics/after/20230330_161944.jpg" alt="Remodel" />
           <div className="Remodel">
             <h3>Remodel</h3>
             <p>From design to construction, we handle every aspect of your remodel.</p>
+            <button onClick={() => openCarousel(remodelImages)} className="see-more-button">Click to See More</button>
           </div>
         </div>
       </div>

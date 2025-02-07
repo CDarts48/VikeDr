@@ -6,13 +6,25 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 const CarouselModal = ({ images, isOpen, onClose }) => {
   if (!isOpen) return null;
 
+  const handleOverlayClick = (e) => {
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="carousel-modal-overlay">
-      <div className="carousel-modal-content">
+    <div className="carousel-modal-overlay" onClick={handleOverlayClick}>
+      <div className="carousel-modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="carousel-modal-close" onClick={onClose}>
           &times;
         </button>
-        <Carousel showThumbs={false} infiniteLoop useKeyboardArrows>
+        <Carousel
+          showThumbs={false}
+          infiniteLoop
+          useKeyboardArrows
+          autoPlay
+          interval={3000} // Change the interval to the desired number of milliseconds
+        >
           {images.map((image, index) => (
             <div key={index}>
               <img src={image.src} alt={image.alt} />
