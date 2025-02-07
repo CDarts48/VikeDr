@@ -1,6 +1,6 @@
 import React from 'react';
 import './code.css';
-import { handleContactClick } from '../header/onClick';
+import { handleContactClick } from '../../utils/onClick.js';
 
 const HeroSection = () => {
   return (

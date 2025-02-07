@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { handleContactClick } from '../../utils/onClick.js';
 import './code.css';
 
 const ContactSection = () => {
@@ -6,7 +7,7 @@ const ContactSection = () => {
     // Initialize the map
     function initMap() {
       const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 9.5,
+        zoom: 9.75,
         center: { lat: 39.9205, lng: -105.0867 },
         mapTypeId: "terrain",
       });
@@ -54,12 +55,12 @@ const ContactSection = () => {
           <div id="map"></div>
         </div>
         <div className="contact-info">
+          <h2>Looking Forward to Hearing From You!</h2>
           <p>Topher's Maintenance and Repair</p>
           <p>Westminster, Colorado</p>
           <p>(720) 238-4082</p>
-          <p>Looking Forward to Hearing From You!</p>
           <p>
-            <a href="mailto:Chris@tophersmandr.com?subject=A Maintenance and Repair Request from">
+            <a href="mailto:Chris@tophersmandr.com?subject=A Maintenance and Repair Request from" onClick={handleContactClick}>
               Chris@tophersmandr.com
             </a>
           </p>
