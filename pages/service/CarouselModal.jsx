@@ -23,6 +23,7 @@ const CarouselModal = ({ images, isOpen, onClose }) => {
           infiniteLoop
           useKeyboardArrows
           autoPlay
+          stopOnHover={false} // Ensure autoplay continues even on hover
           interval={3000} // Change the interval to the desired number of milliseconds
         >
           {images.map((image, index) => (
