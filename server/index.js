@@ -10,7 +10,11 @@ startServer()
 async function startServer() {
   const app = express()
 
+  // Enable compression middleware
   app.use(compression())
+
+  // Serve static files
+  app.use(express.static(path.join(__dirname, 'public')))
 
   // Serve robots.txt as plain text
   app.get('/robots.txt', (req, res) => {

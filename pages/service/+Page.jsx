@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CarouselModal from './CarouselModal';
+import ImageContainer from './ImageContainer';
 import './code.css';
 
 const ServiceSection = () => {
@@ -43,38 +44,46 @@ const ServiceSection = () => {
     <section id="services-section" className="service">
       <h2>Service in Action</h2>
       <div className="grid">
-        <div className="image-container">
-          <img src="./workpics/after/hillPorchAfter.png" alt="Porches" />
-          <div className="Porches">
-            <h3>Porches</h3>
-            <p>Our experts can repair and maintain your porch to keep it looking great.</p>
-            <button onClick={() => openCarousel(porchImages)} className="see-more-button">Click to See More</button>
-          </div>
-        </div>
-        <div className="image-container">
-          <img src="/workpics/after/20231113_162909.jpg" alt="Bathroom" />
-          <div className="Bathroom">
-            <h3>Bathroom</h3>
-            <p>Our team can help you design and build the perfect bathroom.</p>
-            <button onClick={() => openCarousel(bathroomImages)} className="see-more-button">Click to See More</button>
-          </div>
-        </div>
-        <div className="image-container">
-          <img src="./workpics/after/20230920_170812.jpg" alt="Kitchen" />
-          <div className="Kitchen">
-            <h3>Kitchen</h3>
-            <p>We specialize in kitchen renovations to create a space you'll love.</p>
-            <button onClick={() => openCarousel(kitchenImages)} className="see-more-button">Click to See More</button>
-          </div>
-        </div>
-        <div className="image-container">
-          <img src="./workpics/after/20230330_161944.jpg" alt="Remodel" />
-          <div className="Remodel">
-            <h3>Remodel</h3>
-            <p>From design to construction, we handle every aspect of your remodel.</p>
-            <button onClick={() => openCarousel(remodelImages)} className="see-more-button">Click to See More</button>
-          </div>
-        </div>
+        <ImageContainer
+          src="./workpics/after/hillPorchAfter.png"
+          alt="Porches"
+          title="Porches"
+          description="Our experts can repair and maintain your porch to keep it looking great."
+          images={porchImages}
+          openCarousel={openCarousel}
+          width="600" // Specify the width
+          height="400" // Specify the height
+        />
+        <ImageContainer
+          src="/workpics/after/20231113_162909.jpg"
+          alt="Bathroom"
+          title="Bathroom"
+          description="Our team can help you design and build the perfect bathroom."
+          images={bathroomImages}
+          openCarousel={openCarousel}
+          width="600" // Specify the width
+          height="400" // Specify the height
+        />
+        <ImageContainer
+          src="./workpics/after/20230920_170812.jpg"
+          alt="Kitchen"
+          title="Kitchen"
+          description="We specialize in kitchen renovations to create a space you'll love."
+          images={kitchenImages}
+          openCarousel={openCarousel}
+          width="600" // Specify the width
+          height="400" // Specify the height
+        />
+        <ImageContainer
+          src="./workpics/after/20230330_161944.jpg"
+          alt="Remodel"
+          title="Remodel"
+          description="From design to construction, we handle every aspect of your remodel."
+          images={remodelImages}
+          openCarousel={openCarousel}
+          width="600" // Specify the width
+          height="400" // Specify the height
+        />
       </div>
       <CarouselModal images={carouselImages} isOpen={isCarouselOpen} onClose={closeCarousel} />
     </section>
