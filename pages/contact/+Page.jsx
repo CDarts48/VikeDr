@@ -7,7 +7,7 @@ const ContactSection = () => {
     // Initialize the map
     function initMap() {
       const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 9.75,
+        zoom: 9.40,
         center: { lat: 39.9205, lng: -105.0867 },
         mapTypeId: "terrain",
       });
