@@ -1,93 +1,55 @@
-import React, { useState } from 'react';
-import CarouselModal from './CarouselModal';
-import ImageContainer from './ImageContainer';
+import React, { useEffect, useState } from "react";
 import './code.css';
 
-const ServiceSection = () => {
-  const [isCarouselOpen, setCarouselOpen] = useState(false);
-  const [carouselImages, setCarouselImages] = useState([]);
+// Import photos from the before and after folders
+const data = [
+  { before: '/workpics/before/hillPorchBefore.png', after: '/workpics/after/hillPorchAfter.png' },
+  // { before: '/workpics/before/20240110_134125.jpg', after: '/workpics/after/20240202_122343.jpg' },
+  { before: '/workpics/before/20231010_110550.jpg', after: '/workpics/after/20231016_160754.jpg' },
+  { before: '/workpics/before/20230830_112212.jpg', after: '/workpics/after/20231208_175223.jpg' },
+  { before: '/workpics/before/20230722_154051.jpg', after: '/workpics/after/20230723_205706.jpg' },
+  { before: '/workpics/before/20230829_155936.jpg', after: '/workpics/after/20230920_170812.jpg' },
+  { before: '/workpics/before/20230525_120122.jpg', after: '/workpics/after/20230505_144805.jpg' },
+];
 
-  const openCarousel = (images) => {
-    setCarouselImages(images);
-    setCarouselOpen(true);
+const Carousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const carouselInfiniteScroll = () => {
+    if (currentIndex === data.length - 1) {
+      return setCurrentIndex(0);
+    }
+    return setCurrentIndex(currentIndex + 1);
   };
 
-  const closeCarousel = () => {
-    setCarouselOpen(false);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      carouselInfiniteScroll();
+    }, 6000);
 
-  const porchImages = [
-    { src: './workpics/before/porches/hillPorchBefore.png', alt: 'Porch', caption: 'Before' },
-    { src: './workpics/after/hillPorchAfter.png', alt: 'Porch', caption: 'After' },
-    { src: './workpics/after/porch3.jpg', alt: 'Porch', caption: 'Porch 3' },
-  ];
-
-  const bathroomImages = [
-    { src: '/workpics/after/20231113_162909.jpg', alt: 'Bathroom', caption: 'Bathroom 1' },
-    { src: '/workpics/after/bathroom2.jpg', alt: 'Bathroom', caption: 'Bathroom 2' },
-    { src: '/workpics/after/bathroom3.jpg', alt: 'Bathroom', caption: 'Bathroom 3' },
-  ];
-
-  const kitchenImages = [
-    { src: './workpics/after/20230920_170812.jpg', alt: 'Kitchen', caption: 'Kitchen 1' },
-    { src: './workpics/after/kitchen2.jpg', alt: 'Kitchen', caption: 'Kitchen 2' },
-    { src: './workpics/after/kitchen3.jpg', alt: 'Kitchen', caption: 'Kitchen 3' },
-  ];
-
-  const remodelImages = [
-    { src: './workpics/after/20230330_161944.jpg', alt: 'Remodel', caption: 'Remodel 1' },
-    { src: './workpics/after/remodel2.jpg', alt: 'Remodel', caption: 'Remodel 2' },
-    { src: './workpics/after/remodel3.jpg', alt: 'Remodel', caption: 'Remodel 3' },
-  ];
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   return (
-    <section id="services-section" className="service">
-      <h2>Service in Action</h2>
-      <div className="grid">
-        <ImageContainer
-          src="./workpics/after/hillPorchAfter.png"
-          alt="Porches"
-          title="Porches"
-          description="Our experts can repair and maintain your porch to keep it looking great."
-          images={porchImages}
-          openCarousel={openCarousel}
-          width="600" // Specify the width
-          height="400" // Specify the height
-        />
-        <ImageContainer
-          src="/workpics/after/20231113_162909.jpg"
-          alt="Bathroom"
-          title="Bathroom"
-          description="Our team can help you design and build the perfect bathroom."
-          images={bathroomImages}
-          openCarousel={openCarousel}
-          width="600" // Specify the width
-          height="400" // Specify the height
-        />
-        <ImageContainer
-          src="./workpics/after/20230920_170812.jpg"
-          alt="Kitchen"
-          title="Kitchen"
-          description="We specialize in kitchen renovations to create a space you'll love."
-          images={kitchenImages}
-          openCarousel={openCarousel}
-          width="600" // Specify the width
-          height="400" // Specify the height
-        />
-        <ImageContainer
-          src="./workpics/after/20230330_161944.jpg"
-          alt="Remodel"
-          title="Remodel"
-          description="From design to construction, we handle every aspect of your remodel."
-          images={remodelImages}
-          openCarousel={openCarousel}
-          width="600" // Specify the width
-          height="400" // Specify the height
-        />
+    <div>
+      <h2 className="carousel-header">Remodel / Build /  Maintenance</h2>
+      <div className='labels-container'>
+        <div id="Before">Before</div>
+        <div id="After">After</div>
       </div>
-      <CarouselModal images={carouselImages} isOpen={isCarouselOpen} onClose={closeCarousel} />
-    </section>
+      <div className='carousel-container'>
+        <div className='carousel-item'>
+          <div className="before">
+            <img src={data[currentIndex].before} alt={`Before ${currentIndex}`} />
+          </div>
+          <div className="after">
+            <img src={data[currentIndex].after} alt={`After ${currentIndex}`} />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default ServiceSection;
+export default Carousel;

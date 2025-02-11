@@ -15,8 +15,9 @@ const ContactSection = () => {
       const rectangleCoords = [
         { lat: 40.2249, lng: -105.2717 }, // NW Corner (Lyons, CO)
         { lat: 40.2249, lng: -104.9300 }, // NE Corner (Frederick/Firestone)
-        { lat: 39.6650, lng: -104.8300 }, // SE Corner (Heather Gardens, Aurora)
-        { lat: 39.6333, lng: -105.3172 }, // SW Corner (Evergreen)
+        { lat: 39.6965, lng: -104.790 }, // SE Corner (Denver)
+        { lat: 39.6133, lng: -104.8300 }, // SE Corner (Heather Gardens, Aurora)
+        { lat: 39.6133, lng: -105.3172 }, // SW Corner (Evergreen)
       ];
       // Construct the polygon.
       const serviceArea = new google.maps.Polygon({

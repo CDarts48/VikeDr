@@ -1,83 +1,57 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
 
-.service > h2 {
-  text-align: center; /* Centers the text */
-  font-size: 3em; /* Adjust this value as needed */
-  color: rgb(80, 125, 229);
-}
-
-.grid img {
-  width: 100%;
-  height: auto;
-}
-
-.grid button {
-  width: 100%;
-  margin-top: auto;
-}
-
-.grid > div {
+.carousel-container {
+  background: black;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  overflow: visible;
+  width: 100%; /* Set the width of the carousel container */
+  height: 90vh; /* Increase the height of the carousel container */
+  margin: 0 auto; /* Center the carousel container */
 }
 
-.image-container {
-  position: relative;
+h2 {
+  color: rgb(80, 125, 229); /* Set the color of h2 text to white */
 }
 
-.image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transition: opacity 2s ease-in-out;
-}
-
-.image.fade {
-  opacity: 0;
-}
-
-.carousel-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+.carousel-item {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item .before, .carousel-item .after {
+  width: 50%; /* Each div takes up 50% of the width */
+  height: 100%; /* Each div takes up 100% of the height */
+  display: flex;
+  flex-direction: row; /* Arrange children vertically */
   align-items: center;
-  z-index: 1000;
+  justify-content: center;
+  background: black; /* Set the background color to black */
+  padding: 10px; /* Reduce padding to maximize space */
+  box-sizing: border-box; /* Ensure padding is included in the width and height */
 }
 
-.carousel-modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 800px;
+.carousel-item img {
   width: 100%;
-  position: relative;
+  height: 100%;
+  object-fit: cover; /* Ensure the image fits within the div while maintaining aspect ratio */
+  border: 5px solid white; /* Add a border around the image */
+  box-sizing: border-box; /* Ensure padding is included in the width and height */
 }
 
-.carousel-modal-close {
-  position: relative;
-  background: white;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
+.carousel-header {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Make carousel arrows less opaque */
-.carousel .control-arrow {
-  opacity: 99.5; /* Adjust the opacity value as needed */
+#Before, #After {
+  font-size: 2rem;
+  color: rgb(80, 125, 229); /* Set the text color to white */
+  margin-bottom: 10px; /* Add some margin below the text */
 }
 
-.carousel .control-arrow:hover {
-  opacity: 1; /* Adjust the opacity value for hover state as needed */
+.labels-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
 }
