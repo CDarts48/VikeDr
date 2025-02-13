@@ -3,7 +3,13 @@ import compression from 'compression'
 import { renderPage } from 'vike/server'
 import { root } from './root.js'
 import path from 'path'
+import { fileURLToPath } from 'url'
+
 const isProduction = process.env.NODE_ENV === 'production'
+
+// Get the directory name of the current module
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 startServer()
 
@@ -25,14 +31,14 @@ async function startServer() {
   if (isProduction) {
     // In production, we need to serve our static assets ourselves.
     // (In dev, Vite's middleware serves our static assets.)
-    const sirv = (await import('sirv')).default;
-    app.use(sirv(`${root}/dist/client`));
+    const sirv = (await import('sirv')).default
+    app.use(sirv(`${root}/dist/client`))
 
     // Manually import the server production entry
     try {
-      await import(`${root}/dist/server/+onRenderHtml.js`);
+      await import(`${root}/dist/server/+onRenderHtml.js`)
     } catch (error) {
-      console.error('Failed to import server production entry:', error);
+      console.error('Failed to import server production entry:', error)
     }
   } else {
     // Commenting out the development server functions
