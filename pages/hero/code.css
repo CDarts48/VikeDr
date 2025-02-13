@@ -9,7 +9,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: black;
-    height: 60vh; /* Increase the height of the hero section */
+    height: 60vh; /* Set the height of the hero section */
     box-sizing: border-box;
     overflow: hidden; /* Hide any overflow */
 }
@@ -22,8 +22,6 @@ body {
     width: 100%;
     height: 100%; /* Ensure the content takes up the full height */
     overflow: hidden; /* Hide any overflow */
-    aspect-ratio: 16 / 9; /* Set the aspect ratio for the hero text */
-
 }
 
 .hero-text {
@@ -34,6 +32,7 @@ body {
     text-align: center;
     width: 100%;
     margin-bottom: 20px; /* Add margin to separate hero-text from hero-image */
+    flex: 1; /* Ensure the hero-text takes up equal space */
 }
 
 .hero-image {
@@ -41,11 +40,11 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 35vh; /* Adjust the height of the hero image container */
+    height: 100%; /* Ensure the image container takes up the full height */
     margin: 0; /* Remove any margin */
     padding: 0; /* Remove any padding */
     overflow: hidden; /* Hide any overflow */
-    aspect-ratio: 16 / 9; /* Set the aspect ratio for the hero image */
+    flex: 1; /* Ensure the hero-image takes up equal space */
 }
 
 .hero-image img {
@@ -118,7 +117,7 @@ body {
 @media (min-width: 769px) {
     .hero {
         flex-direction: row; /* Align items horizontally on larger screens */
-        height: 60vh; /* Increase height for larger screens */
+        height: 60vh; /* Set the height of the hero section */
     }
 
     .hero-content {
@@ -129,16 +128,16 @@ body {
     .hero-text {
         width: 50%; /* Adjust width for larger screens */
         margin-bottom: 0; /* Remove bottom margin for larger screens */
-        aspect-ratio: auto; /* Remove aspect ratio for larger screens */
+        flex: 1; /* Ensure the hero-text takes up equal space */
     }
 
     .hero-image {
         width: 50%; /* Adjust width for larger screens */
-        height: 100%; /* Ensure the image fills the height of the container */
+        height: 100%; /* Ensure the image container takes up the full height */
         margin: 0; /* Remove any margin */
         padding: 0; /* Remove any padding */
         overflow: hidden; /* Hide any overflow */
-        aspect-ratio: auto; /* Remove aspect ratio for larger screens */
+        flex: 1; /* Ensure the hero-image takes up equal space */
     }
 
     .hero-image img {

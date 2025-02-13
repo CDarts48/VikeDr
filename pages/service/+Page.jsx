@@ -32,7 +32,7 @@ const Carousel = () => {
   }, [currentIndex]);
 
   return (
-    <div>
+    <div id='service'>
       <h2 className="carousel-header">Remodel / Build /  Maintenance</h2>
       <div className='labels-container'>
         <div id="Before">Before</div>
