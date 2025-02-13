@@ -1,55 +1,47 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef } from "react";
 import './code.css';
 
 // Import photos from the before and after folders
 const data = [
-  { before: '/workpics/before/hillPorchBefore.png', after: '/workpics/after/hillPorchAfter.png' },
-  // { before: '/workpics/before/20240110_134125.jpg', after: '/workpics/after/20240202_122343.jpg' },
-  { before: '/workpics/before/20231010_110550.jpg', after: '/workpics/after/20231016_160754.jpg' },
-  { before: '/workpics/before/20230830_112212.jpg', after: '/workpics/after/20231208_175223.jpg' },
-  { before: '/workpics/before/20230722_154051.jpg', after: '/workpics/after/20230723_205706.jpg' },
-  { before: '/workpics/before/20230829_155936.jpg', after: '/workpics/after/20230920_170812.jpg' },
-  { before: '/workpics/before/20230525_120122.jpg', after: '/workpics/after/20230505_144805.jpg' },
+  { id: 1, url: '/workpics/before/hillPorchBefore.png' },
+  { id: 2, url: '/workpics/after/hillPorchAfter.png' },
+  { id: 3, url: '/workpics/before/20231010_110550.jpg' },
+  { id: 4, url: '/workpics/after/20231016_160754.jpg' },
+  { id: 5, url: '/workpics/before/20230830_112212.jpg' },
+  { id: 6, url: '/workpics/after/20231208_175223.jpg' },
+  { id: 7, url: '/workpics/before/20230722_154051.jpg' },
+  { id: 8, url: '/workpics/after/20230723_205706.jpg' },
+  { id: 9, url: '/workpics/before/20230829_155936.jpg' },
+  { id: 10, url: '/workpics/after/20230920_170812.jpg' },
+  { id: 11, url: '/workpics/before/20230525_120122.jpg' },
+  { id: 12, url: '/workpics/after/20230505_144805.jpg' },
 ];
 
-const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+const Slider = () => {
+  const sliderRef = useRef(null);
+  const scrollAmount = 300; // The amount to scroll when clicking the navigation buttons
 
-  const carouselInfiniteScroll = () => {
-    if (currentIndex === data.length - 1) {
-      return setCurrentIndex(0);
-    }
-    return setCurrentIndex(currentIndex + 1);
+  const scrollLeft = () => {
+    const container = sliderRef.current;
+    container.scrollLeft -= scrollAmount;
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      carouselInfiniteScroll();
-    }, 6000);
-
-    // Cleanup interval on component unmount
-    return () => clearInterval(interval);
-  }, [currentIndex]);
+  const scrollRight = () => {
+    const container = sliderRef.current;
+    container.scrollLeft += scrollAmount;
+  };
 
   return (
-    <div id='service'>
-      <h2 className="carousel-header">Remodel / Build /  Maintenance</h2>
-      <div className='labels-container'>
-        <div id="Before">Before</div>
-        <div id="After">After</div>
+    <div className="App">
+      <button className="nav-btn left" onClick={scrollLeft}>‹</button>
+      <div className="images-container" ref={sliderRef}>
+        {data.map((item) => (
+          <img className="image" alt="sliderImage" key={item.id} src={item.url} />
+        ))}
       </div>
-      <div className='carousel-container'>
-        <div className='carousel-item'>
-          <div className="before">
-            <img src={data[currentIndex].before} alt={`Before ${currentIndex}`} />
-          </div>
-          <div className="after">
-            <img src={data[currentIndex].after} alt={`After ${currentIndex}`} />
-          </div>
-        </div>
-      </div>
+      <button className="nav-btn right" onClick={scrollRight}>›</button>
     </div>
   );
 };
 
-export default Carousel;
+export default Slider;
