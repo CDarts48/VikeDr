@@ -9,9 +9,9 @@ body {
     justify-content: center;
     align-items: center;
     background-color: black;
-    height: auto; /* Adjust height for small screens */
-    padding: 20px; /* Add padding for small screens */
+    height: 60vh; /* Increase the height of the hero section */
     box-sizing: border-box;
+    overflow: hidden; /* Hide any overflow */
 }
 
 .hero-content {
@@ -20,6 +20,10 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 100%; /* Ensure the content takes up the full height */
+    overflow: hidden; /* Hide any overflow */
+    aspect-ratio: 16 / 9; /* Set the aspect ratio for the hero text */
+
 }
 
 .hero-text {
@@ -37,17 +41,18 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: auto; /* Adjust height for small screens */
+    height: 35vh; /* Adjust the height of the hero image container */
     margin: 0; /* Remove any margin */
     padding: 0; /* Remove any padding */
+    overflow: hidden; /* Hide any overflow */
+    aspect-ratio: 16 / 9; /* Set the aspect ratio for the hero image */
 }
 
 .hero-image img {
-    max-width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    object-fit: contain;
-    margin: 0; /* Remove any margin */
-    padding: 0; /* Remove any padding */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fits within the div while maintaining aspect ratio */
+    box-sizing: border-box;
 }
 
 .hero-text h1 {
@@ -113,16 +118,18 @@ body {
 @media (min-width: 769px) {
     .hero {
         flex-direction: row; /* Align items horizontally on larger screens */
-        height: 66vh; /* Adjust height for larger screens */
+        height: 60vh; /* Increase height for larger screens */
     }
 
     .hero-content {
         flex-direction: row; /* Align items horizontally on larger screens */
+        height: 100%; /* Ensure the content takes up the full height */
     }
 
     .hero-text {
         width: 50%; /* Adjust width for larger screens */
         margin-bottom: 0; /* Remove bottom margin for larger screens */
+        aspect-ratio: auto; /* Remove aspect ratio for larger screens */
     }
 
     .hero-image {
@@ -130,12 +137,14 @@ body {
         height: 100%; /* Ensure the image fills the height of the container */
         margin: 0; /* Remove any margin */
         padding: 0; /* Remove any padding */
+        overflow: hidden; /* Hide any overflow */
+        aspect-ratio: auto; /* Remove aspect ratio for larger screens */
     }
 
     .hero-image img {
-        max-width: 100%;
-        height: auto;
-        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure the image fits within the div while maintaining aspect ratio */
     }
 
     .hero-text h1 {
