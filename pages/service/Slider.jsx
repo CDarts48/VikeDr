@@ -3,20 +3,38 @@ import './code.css';
 
 // Import photos from the before and after folders
 const data = [
+  { id: 0, url: '/workpics/misc/businesscard.jpg' },
   { id: 1, url: '/workpics/before/hillPorchBefore.png' },
   { id: 2, url: '/workpics/after/hillPorchAfter.png' },
-  { id: 3, url: '/workpics/before/20231010_110550.jpg' },
-  { id: 4, url: '/workpics/after/20231016_160754.jpg' },
-  { id: 5, url: '/workpics/before/20230830_112212.jpg' },
-  { id: 6, url: '/workpics/after/20231208_175223.jpg' },
-  { id: 7, url: '/workpics/before/20230722_154051.jpg' },
-  { id: 8, url: '/workpics/after/20230723_205706.jpg' },
-  { id: 9, url: '/workpics/before/20230829_155936.jpg' },
-  { id: 10, url: '/workpics/after/20230920_170812.jpg' },
-  { id: 11, url: '/workpics/before/20230525_120122.jpg' },
-  { id: 12, url: '/workpics/after/20230505_144805.jpg' },
-  { id: 13, url: './workpics/before/20241118_122846.jpg' },
-  { id: 14, url: './workpics/after/20241130_155548.jpg' }
+  { id: 3, url: '/workpics/before/20240527_193813.jpg' },
+  { id: 4, url: '/workpics/after/20240608_175551.jpg ' },
+  { id: 5, url: '/workpics/after/20240619_094805.jpg' },
+  { id: 6, url: '/workpics/after/20240624_144536.jpg' },
+  { id: 7, url: '/workpics/after/20240625_191345.jpg' },
+  { id: 8, url: '/workpics/before/20231010_110550.jpg' },
+  { id: 9, url: '/workpics/after/20231016_160754.jpg' },
+  { id: 10, url: '/workpics/before/20230830_112212.jpg' },
+  { id: 11, url: '/workpics/after/20231208_175223.jpg' },
+  { id: 12, url: '/workpics/before/20230722_154051.jpg' },
+  { id: 13, url: '/workpics/after/20230723_205706.jpg' },
+  { id: 14, url: '/workpics/before/20230829_155936.jpg' },
+  { id: 15, url: '/workpics/after/20230920_170812.jpg' },
+  { id: 16, url: '/workpics/before/20230525_120122.jpg' },
+  { id: 17, url: '/workpics/after/20230505_144805.jpg' },
+  { id: 18, url: '/workpics/before/20241118_122846.jpg' },
+  { id: 19, url: '/workpics/after/20241130_155548.jpg' },
+  { id: 20, url: '/workpics/before/20240321_191549.jpg' },
+  { id: 21, url: '/workpics/after/20240427_175355.jpg' },
+  { id: 22, url: '/workpics/before/20230316_135031.jpg' },
+  { id: 23, url: '/workpics/after/20230914_123747.jpg' },
+  { id: 24, url: '/workpics/before/20230316_135053.jpg' },
+  { id: 25, url: '/workpics/after/20230914_123755.jpg' },
+  
+
+ 
+  
+
+
 ];
 
 const Slider = () => {
