@@ -29,12 +29,6 @@ const data = [
   { id: 23, url: '/workpics/after/20230914_123747.jpg' },
   { id: 24, url: '/workpics/before/20230316_135053.jpg' },
   { id: 25, url: '/workpics/after/20230914_123755.jpg' },
-  
-
- 
-  
-
-
 ];
 
 const Slider = () => {
