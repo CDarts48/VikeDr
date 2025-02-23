@@ -15,6 +15,8 @@ const data = [
   { id: 10, url: '/workpics/after/20230920_170812.jpg' },
   { id: 11, url: '/workpics/before/20230525_120122.jpg' },
   { id: 12, url: '/workpics/after/20230505_144805.jpg' },
+  { id: 13, url: './workpics/before/20241118_122846.jpg' },
+  { id: 14, url: './workpics/after/20241130_155548.jpg' }
 ];
 
 const Slider = () => {
