@@ -50,7 +50,13 @@ const Slider = () => {
       <button className="nav-btn left" onClick={scrollLeft}>‹</button>
       <div className="images-container" ref={sliderRef}>
         {data.map((item) => (
-          <img className="image" alt="sliderImage" key={item.id} src={item.url} />
+          <img
+            className="image"
+            alt="sliderImage"
+            key={item.id}
+            src={item.url}
+            loading="lazy" // Lazy load images
+          />
         ))}
       </div>
       <button className="nav-btn right" onClick={scrollRight}>›</button>
@@ -58,4 +64,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default React.memo(Slider); // Use React.memo to prevent unnecessary re-renders

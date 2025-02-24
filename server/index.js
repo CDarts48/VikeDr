@@ -57,6 +57,14 @@ async function startServer() {
     */
   }
 
+  // Middleware to handle specific routes and return a 404 status code
+  // const blockedRoutes = ['/about', '/contact', '/footer', '/header', '/hero', '/reviews', '/service'];
+  // blockedRoutes.forEach(route => {
+  //   app.get(route, (req, res) => {
+  //     res.status(404).send('Not Found');
+  //   });
+  // });
+
   // Other middlewares (e.g. some RPC middleware such as Telefunc)
   // ...
 
