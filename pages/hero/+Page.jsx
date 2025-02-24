@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="hero-content">
         <div className="hero-image">
           <img
-            src="/workpics/misc/rs=w_1280,h_853.webp"
+            src="/workpics/misc/rs=w_1280,h_853.avif"
             alt="Tools on a Table"
             loading="eager"
             width="1280"

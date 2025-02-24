@@ -34,7 +34,7 @@ function onRenderHtml(pageContext) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="${desc}" />
         <title>${title}</title>
-        <link rel="preload" href="/workpics/misc/rs=w_1280,h_853.webp" as="image">
+        <link rel="preload" href="/workpics/misc/rs=w_1280,h_853.avif" as="image">
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&callback=initMap"></script>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11312378702"></script>
