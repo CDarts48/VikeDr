@@ -17,7 +17,7 @@ Layout.propTypes = {
   children: PropTypes.node
 }
 
-function Layout({ pageContext, children }) {
+function Layout({ pageContext }) {
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
@@ -27,7 +27,6 @@ function Layout({ pageContext, children }) {
         <Reviews /> {/* Include the Reviews component */}
         <ContactSection /> {/* Include the ContactSection component */}
         <Footer /> {/* Include the Footer component */}
-        {children}
       </PageContextProvider>
     </React.StrictMode>
   )
