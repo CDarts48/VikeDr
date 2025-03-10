@@ -5,7 +5,7 @@ import Slider from './Slider';
 const Page = () => {
   return (
     <div id="services">
-      <h2 className="slide-header">Remodel / Build / Maintenance</h2>
+      <h2 className="slide-header"> Build / Maintenance / Remodel</h2>
       <Slider />
     </div>
   );
