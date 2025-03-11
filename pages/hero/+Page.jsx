@@ -17,8 +17,8 @@ const HeroSection = () => {
         </div>
         <div className="hero-text">
           <h1>Trusted Solutions</h1>
-          <h2>Since 2012</h2>
-          <p>Professional handyman for residential and commercial properties.</p>
+          <h2>15 years of service in the Denver Metro Area</h2>
+          <p>Professional handyman services for homeowners and property management companies.</p>
           <a
             href="mailto:Chris@tophersmandr.com?subject=A Maintenance and Repair Request from"
             onClick={handleContactClick}
